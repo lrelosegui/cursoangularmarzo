@@ -1,0 +1,25 @@
+<ul>
+    <!-- ------------------- Mostrar lista de libros y sus autores ------------------- -->
+    <!-- <li *ngFor="let libro of libros">{{libro.titulo}} - {{libro.autor}}</li> -->
+    
+    <!-- ------------------- Incluir el índice para enumerarlos ------------------- -->
+    <!-- <li *ngFor="let libro of libros; index as indice">{{indice}}) {{libro.titulo}} - {{libro.autor}}</li> -->
+
+    <!-- ------------------- Primero, último, par, impar ------------------- -->
+    <!-- <li *ngFor="let libro of libros; index as indice; first as primero; last as ultimo; even as par; odd as impar">{{indice}}) {{libro.titulo}}
+        <span *ngIf="indice == 1">**** Best seller ****</span>
+        <span *ngIf="primero">*** * Primero *** *</span>
+        <span *ngIf="ultimo">*** * Último *** *</span>
+        <span *ngIf="par">* par *</span>
+        <span *ngIf="impar">* impar *</span>
+    </li> -->
+    
+    <!-- ------------------- Enlazar a la búsqueda del título en google ------------------- -->
+    <!-- <li *ngFor="let libro of libros">
+        <a href ="https://www.google.com/search?q={{libro.titulo}}">{{libro.titulo}}</a>
+    </li> -->
+
+    <li *ngFor="let libro of libros">
+        <a (click)="showAuthor(libro)">{{libro.titulo}}</a>
+    </li>
+</ul>
