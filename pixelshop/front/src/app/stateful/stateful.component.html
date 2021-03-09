@@ -14,13 +14,13 @@
     <ul class="list-group">
         <li class="list-group-item disabled">Información matrícula</li>
         <li *ngFor="let boughtItem of boughtItems" class="list-group-item">{{boughtItem.title}}
-            <span class="badge badge-primary badge-pill">{{boughtItem.price | currency:"&euro;"}}</span>
-            <span class="badge badge-primary badge-pill">X Eliminar</span>
+            <span class="badge badge-primary badge-pill">{{boughtItem.price | currency:"&euro;"}}</span> <a
+                class="material-icons">delete_forever</a>
         </li>
         <li class="list-group-item disabled">
             <h2>Total: {{finalPrice() | currency:"&euro;"}}</h2>
         </li>
     </ul>
-
-
+    <app-confirm></app-confirm>
+    <app-status-cart></app-status-cart>
 </main><!-- /.container -->

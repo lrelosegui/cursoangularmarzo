@@ -1,4 +1,15 @@
 <ul>
+    <li *ngFor="let libro of libros">
+        <a [routerLink]="['/informacion', libro.id]">{{libro.titulo}}</a>
+    </li>
+
+
+    <!-- Recorrer los libros para mostrar su título (sin utilizar el enrutador) -->
+    <!-- <li *ngFor="let libro of libros">
+        <a (click)="showAuthor(libro)">{{libro.titulo}}</a>
+    </li> -->
+
+
     <!-- ------------------- Mostrar lista de libros y sus autores ------------------- -->
     <!-- <li *ngFor="let libro of libros">{{libro.titulo}} - {{libro.autor}}</li> -->
     
@@ -18,8 +29,4 @@
     <!-- <li *ngFor="let libro of libros">
         <a href ="https://www.google.com/search?q={{libro.titulo}}">{{libro.titulo}}</a>
     </li> -->
-
-    <li *ngFor="let libro of libros">
-        <a (click)="showAuthor(libro)">{{libro.titulo}}</a>
-    </li>
 </ul>

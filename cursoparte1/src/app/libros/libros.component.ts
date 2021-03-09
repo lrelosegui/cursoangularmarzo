@@ -22,9 +22,11 @@ export class LibrosComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.libros);
   }
-  showAuthor(_libro){
+
+  // Este método deja de usarse al utilizar el enrutador
+  /* showAuthor(_libro){
     this.verAutor = 'escrito por: ' +  _libro.autor;
     alert(this.verAutor);
-  }
+  } */
 
 }

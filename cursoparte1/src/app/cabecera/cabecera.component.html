@@ -1,0 +1,9 @@
+<ul>
+<!--     <li><a href="/">Inicio</a></li>
+    <li><a [routerLink]="['/listado-libros']">Listado libros</a></li>  -->
+
+    <!-- Cuando tenemos el enrutador, hay que utilizar el routerLink -->
+    <!-- Generando así en lugar de con ahref, se consigue que únicamente se cargue el contenido nuevo, el resto de elementos permanecen -->
+    <li><a [routerLink]="['/']">Inicio</a></li>
+    <li><a [routerLink]="['/listado-libros']" routerLinkActive="myclass">Listado libros</a></li>
+</ul>

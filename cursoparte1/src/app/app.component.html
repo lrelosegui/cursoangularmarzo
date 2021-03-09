@@ -1,5 +1,7 @@
-<h2>Ejemplo de un NgFor</h2>
-<app-libros></app-libros>
+<app-cabecera></app-cabecera>
+<!-- Carga los componentes de forma dinámica desde el enrutador -->
+<!-- Como en el app.module.ts tengo definido que cuando se llame a /listado-libros se cargue el componente de Libros, con router-outlet será como añadir aquí manualmente <app-libros> -->
+<router-outlet></router-outlet>
 
 <!-- --------------------------------------------- Directivas para crear un Switch --------------------------------------------- -->
 <!-- 
