@@ -1,8 +1,8 @@
-<ul>
-    <li *ngFor="let libro of libros">
-        <a [routerLink]="['/informacion', libro.id]">{{libro.titulo}}</a>
+<div class="loader" *ngIf="cargando"></div>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let libro of libros">
+        <a (click)="agregarLibro(libro)" [routerLink]="['/informacion', libro.id]">{{libro.titulo}}</a>
     </li>
-
 
     <!-- Recorrer los libros para mostrar su título (sin utilizar el enrutador) -->
     <!-- <li *ngFor="let libro of libros">
@@ -12,7 +12,7 @@
 
     <!-- ------------------- Mostrar lista de libros y sus autores ------------------- -->
     <!-- <li *ngFor="let libro of libros">{{libro.titulo}} - {{libro.autor}}</li> -->
-    
+
     <!-- ------------------- Incluir el índice para enumerarlos ------------------- -->
     <!-- <li *ngFor="let libro of libros; index as indice">{{indice}}) {{libro.titulo}} - {{libro.autor}}</li> -->
 
@@ -24,7 +24,7 @@
         <span *ngIf="par">* par *</span>
         <span *ngIf="impar">* impar *</span>
     </li> -->
-    
+
     <!-- ------------------- Enlazar a la búsqueda del título en google ------------------- -->
     <!-- <li *ngFor="let libro of libros">
         <a href ="https://www.google.com/search?q={{libro.titulo}}">{{libro.titulo}}</a>

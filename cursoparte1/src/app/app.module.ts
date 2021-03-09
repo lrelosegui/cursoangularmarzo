@@ -14,6 +14,9 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { InformacionComponent } from './informacion/informacion.component';
 
+import { LibroclickedService } from './libroclicked.service';
+import { HttpClientModule } from '@angular/common/http';
+
 const rutas: Routes = [
   /* El enrutador va de arriba a abajo. Si pongo listado-libros, recorre esta lista y la primera que le encaja la ejecuta. Por esto se pone la de '**' al final */
   { path: 'listado-libros', component: LibrosComponent },
@@ -39,9 +42,12 @@ const rutas: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(rutas)
   ],
-  providers: [],
+  providers: [
+    LibroclickedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

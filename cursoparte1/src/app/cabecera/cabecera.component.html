@@ -1,9 +1,28 @@
-<ul>
-<!--     <li><a href="/">Inicio</a></li>
+<!-- <ul>
+    <li><a href="/">Inicio</a></li>
     <li><a [routerLink]="['/listado-libros']">Listado libros</a></li>  -->
 
-    <!-- Cuando tenemos el enrutador, hay que utilizar el routerLink -->
-    <!-- Generando así en lugar de con ahref, se consigue que únicamente se cargue el contenido nuevo, el resto de elementos permanecen -->
-    <li><a [routerLink]="['/']">Inicio</a></li>
+<!-- Cuando tenemos el enrutador, hay que utilizar el routerLink -->
+<!-- Generando así en lugar de con ahref, se consigue que únicamente se cargue el contenido nuevo, el resto de elementos permanecen -->
+<!--<li><a [routerLink]="['/']">Inicio</a></li>
     <li><a [routerLink]="['/listado-libros']" routerLinkActive="myclass">Listado libros</a></li>
-</ul>
+    <p class="h5 my-0 me-md-auto fw-normal">Company name</p>
+    <nav class="my-2 my-md-0 me-md-3">
+      <a class="p-2 text-dark" href="#">Features</a>
+      <a class="p-2 text-dark" href="#">Enterprise</a>
+      <a class="p-2 text-dark" href="#">Support</a>
+      <a class="p-2 text-dark" href="#">Pricing</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Sign up</a>
+</ul> -->
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+    <p class="h5 my-0 me-md-auto fw-normal">Book Pro</p>
+    <nav class="my-2 my-md-0 me-md-3">
+        <a class="p-2 text-dark" [routerLink]="['/']">Inicio</a>
+        <a class="p-2 text-dark" [routerLink]="['/listado-libros']" routerLinkActive="myclass">Listado libros</a>
+    </nav>
+    <ul *ngIf="Libroclicked.verListado()">
+        <li *ngFor="let libro of Libroclicked.verListado()">{{libro.titulo}}</li>
+    </ul>
+    <a class="btn btn-outline-primary" href="#">Identificarse</a>
+</header>
