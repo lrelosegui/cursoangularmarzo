@@ -29,4 +29,8 @@ export class StatelessComponent implements OnInit {
     return !!this.disable;
   }
 
+  mensaje(){
+    alert('¿Estas intentando descargarte la imagen? NO PUEDES')
+  }
+
 }

@@ -1,5 +1,5 @@
 import { ConfirmComponent } from '../confirm/confirm.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Product } from "../interface/product";
 import { Shop } from "../models/shop.model";
 import { HttpClient, HttpResponse } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs'
   templateUrl: './stateful.component.html',
   styleUrls: ['./stateful.component.css']
 })
-export class StatefulComponent implements OnInit {
+export class StatefulComponent implements OnInit, OnDestroy {
 
   @ViewChild(ConfirmComponent, { static: false })
   confirmChild: ConfirmComponent;
@@ -27,6 +27,7 @@ export class StatefulComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.onGlobalKeyboard();
     this.shopSubscription = this.http.get('assets/cursos.json').subscribe(
       (respuesta: Response) => { this.shopModel.shopItems = respuesta; },
       (respuesta: Response) => { this.errorHttp = true }
@@ -34,6 +35,7 @@ export class StatefulComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    document.removeEventListener('keypress', this.onKeyboard);
     this.shopSubscription.unsubscribe();
   }
 
@@ -60,5 +62,16 @@ export class StatefulComponent implements OnInit {
       );
     }
   }
+
+  onKeyboard(_event){
+    console.log(_event);
+  }
+
+  onGlobalKeyboard() {
+    document.addEventListener('keypress', (eventoGlobal) => {
+      this.onKeyboard(eventoGlobal);
+    });
+   }
+   
 
 }

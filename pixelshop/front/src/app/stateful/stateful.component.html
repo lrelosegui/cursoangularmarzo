@@ -22,5 +22,10 @@
         </li>
     </ul>
     <app-confirm></app-confirm>
-    <app-status-cart></app-status-cart>
+    <app-status-cart
+        [price]="finalPrice()"
+        [shopModel] = "shopModel.shopItems"
+        (add)="onConfirm()"
+    ></app-status-cart>
+    <input type="text" (keydown)="onKeyboard($event)"/>
 </main><!-- /.container -->
