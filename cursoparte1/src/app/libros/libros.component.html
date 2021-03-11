@@ -1,4 +1,7 @@
-<div class="loader" *ngIf="cargando"></div>
+
+<div class="loader" *ngIf="cargando"></div> <!-- Spinner con CSS -->
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> --> <!-- Slider de angular material -->
+<!-- <mat-spinner></mat-spinner> --> <!-- Spinner de angular material -->
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let libro of libros">
         <a (click)="agregarLibro(libro)" [routerLink]="['/informacion', libro.id]">{{libro.titulo}}</a>

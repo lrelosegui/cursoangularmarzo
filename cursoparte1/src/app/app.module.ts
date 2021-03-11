@@ -16,6 +16,11 @@ import { InformacionComponent } from './informacion/informacion.component';
 
 import { LibroclickedService } from './libroclicked.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RendererComponent } from './renderer/renderer.component';
+import { FooterComponent } from './footer/footer.component';
+/*import { MatSliderModule } from '@angular/material/slider'; //Slider de angular material
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; //Spinner de angular material*/
 
 const rutas: Routes = [
   /* El enrutador va de arriba a abajo. Si pongo listado-libros, recorre esta lista y la primera que le encaja la ejecuta. Por esto se pone la de '**' al final */
@@ -37,13 +42,18 @@ const rutas: Routes = [
     SobreNosotrosComponent,
     CabeceraComponent,
     InicioComponent,
-    InformacionComponent
+    InformacionComponent,
+    RendererComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(rutas)
+    RouterModule.forRoot(rutas),
+    BrowserAnimationsModule/*,
+    MatSliderModule, //Slider de angular material
+    MatProgressSpinnerModule //Spinner de angular material*/
   ],
   providers: [
     LibroclickedService

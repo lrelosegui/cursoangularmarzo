@@ -34,7 +34,7 @@ export class LibrosComponent implements OnInit {
   cargarLista(){
     // El subscribe lo que va a hacer es ejecutar lo que está dentro de las llaves una vez que tenga la respuesta de libros: La primera si todo está bien, la segunda, si hay un error
     // this.http.get('assets/lista-libros.json').subscribe( // Simulación de servicio con json en assets
-    this.http.get('http://localhost:3000/libros/').subscribe(
+    this.http.get('http://localhost:3000/libros/').subscribe( // Conexión servición nodeapirest en node: https://github.com/typicode/json-server
       (respuesta: Response) => {this.libros = respuesta; this.cargando = false},
       (respuesta: Response) => {this.errorHttp = true}
     )
